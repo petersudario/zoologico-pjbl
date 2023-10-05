@@ -1,4 +1,4 @@
-public class Tratador extends Pessoa {
+public class Tratador extends Funcionario {
     private String responsabilidades;
 
     public Tratador(String nome, int idade,String responsabilidades) {

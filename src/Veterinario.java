@@ -1,4 +1,4 @@
-public class Veterinario extends Pessoa {
+public class Veterinario extends Funcionario {
 
       private int experiencia;
 
