@@ -13,4 +13,7 @@ public class Tratador extends Funcionario {
     public void limparJaula(Jaula jaula){
         System.out.println("Tratador começou a limpar a" + jaula);
     }
+    public void alimentarAnimais(){
+        System.out.println("Tratador está alimentando os animais.");
+    }
 }

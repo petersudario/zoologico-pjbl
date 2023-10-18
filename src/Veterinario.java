@@ -7,9 +7,15 @@ public class Veterinario extends Funcionario {
             this.experiencia = experiencia;
       }
       public void examinarAnimal( Animal animal){
+            System.out.println("Veterinário está examinando o animal");
 
       }
       public void receitarMedicamento(Animal animal){
+      System.out.println("Receitando medicamentos");
+
+      }
+      public void vacinar(Animal animal){
+            System.out.println("Aplicando vacina");
 
       }
 
