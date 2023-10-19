@@ -7,5 +7,11 @@ public class Main {
         anfibios.comer("inseto");
         anfibios.fazer_barulho();
 
+        Pessoa Pedro = new Funcionario("Pedro", 18, 3000.0);
+
+        Pedro.trabalhar();
+
+        Pedro.conta.dados();
+
     }
 }
