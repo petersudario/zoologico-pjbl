@@ -1,7 +1,5 @@
 public class Anfibios extends Animal{
-    public Anfibios(String nome, int idade, String especie,String tipoPele) {
-        super(nome, idade, especie);
-    }
+    public Anfibios(String nome, int idade, String especie,String tipoPele,Boolean calda) { super(nome, idade, especie);}
     String tipoPele;
     Boolean calda;
 

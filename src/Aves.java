@@ -1,8 +1,6 @@
 public class Aves extends Animal{
-    public Aves(String nome, int idade, String especie) {
-        super(nome, idade, especie);
-
-    }
+    public Aves(String nome, int idade, String especie, String tipoPena) { super(nome, idade, especie);}
+    String tipoPena;
     public void voar(){
 
     }
