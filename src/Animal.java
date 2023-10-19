@@ -1,4 +1,4 @@
-public abstract class Animal{
+public abstract class Animal implements Acoes{
     private String nome;
     private int idade;
     private String especie;
@@ -9,17 +9,17 @@ public abstract class Animal{
         this.especie = especie;
     }
 
-    public abstract void fazer_barulho();{
-
+    public void fazer_barulho(){
+        System.out.println("Animal fez barulho");
     }
-    public abstract void comer(String alimento);{
-
+    public void comer(String alimento){
+        System.out.printf("Animal comeu %s", alimento);
     }
-    public abstract void andar();{
-
+    public void andar(){
+        System.out.println("Animal andou");
     }
-    public abstract void dormir();{
-
+    public void dormir(){
+        System.out.println("Animal dormiu");
     }
 }
 
