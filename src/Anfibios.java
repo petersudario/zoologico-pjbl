@@ -3,6 +3,7 @@ public class Anfibios extends Animal{
         super(nome, idade, especie);
     }
     String tipoPele;
+    Boolean calda;
 
 
     @Override
