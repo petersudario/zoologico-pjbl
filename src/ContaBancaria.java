@@ -1,9 +1,10 @@
 public class ContaBancaria {
-    private Pessoa nome;
+
+    private String titular;
     private double saldo;
 
-    public ContaBancaria(Pessoa nome, double saldoInicial) {
-        this.nome = nome;
+    public ContaBancaria(String titular, double saldoInicial) {
+        this.titular = titular;
         this.saldo = saldoInicial;
     }
 
@@ -20,13 +21,10 @@ public class ContaBancaria {
     }
 
     public void dados() {
-        System.out.println("Titular: " + nome.getNome());
-        System.out.println("Idade do Titular: " + nome.getIdade());
-        System.out.println("Saldo: R$" + saldo);
+        System.out.printf("Titular: %s\n", this.titular);
+        System.out.printf("Saldo: R$\n" + this.saldo);
     }
 
-    public double getSaldo() {
-        return saldo;
-    }
+
 
 }
