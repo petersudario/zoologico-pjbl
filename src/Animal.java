@@ -1,7 +1,7 @@
 public abstract class Animal implements Acoes{
-    private String nome;
-    private int idade;
-    private String especie;
+    protected String nome;
+    protected int idade;
+    protected String especie;
 
     public Animal(String nome, int idade, String especie) {
         this.nome = nome;

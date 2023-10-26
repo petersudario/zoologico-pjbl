@@ -1,6 +1,6 @@
 public class Visitante extends Pessoa{
 
-    private float dinheiro;
+    protected float dinheiro;
 
     public Visitante(String nome, int idade, float dinheiro){
         super(nome, idade);
