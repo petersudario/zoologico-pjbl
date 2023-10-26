@@ -1,4 +1,5 @@
 public abstract class Pessoa {
+
     protected String nome;
 
     protected int idade;
@@ -20,10 +21,6 @@ public abstract class Pessoa {
 
     public void andar(){
         System.out.printf("%s está andando", this.nome);
-    }
-
-    public void entrarAquario(){
-        System.out.printf("%s entrou no Aquario", this.nome);
     }
 
     public void dormir(){
