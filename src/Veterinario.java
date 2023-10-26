@@ -18,4 +18,9 @@ public class Veterinario extends Funcionario {
       protected void tratarFeridas(Animal animal){
             System.out.printf("Veterinario %s esta tratando feridas no animal %s",nome, animal.nome);
       }
-}
+      protected void receitar(Animal animal){
+            System.out.printf("Veterinario %s esta receitando um medicamento  para o %s ",nome, animal.nome);
+
+      }
+
+      }
