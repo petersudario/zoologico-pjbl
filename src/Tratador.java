@@ -1,19 +1,37 @@
 public class Tratador extends Funcionario {
-    private String responsabilidades;
 
-    public Tratador(String nome, int idade,String responsabilidades) {
-        super(nome, idade);
-        this.responsabilidades = responsabilidades;
+    protected double horasTrabalhadas=0;
+
+    public Tratador(String nome, int idade, double saldoInicial, double horasTrabalhadas) {
+        super(nome, idade, saldoInicial);
+        this.horasTrabalhadas = horasTrabalhadas;
+
     }
 
-    @Override
-    public void trabalhar() {
-        System.out.println("Tratador começou a trabalhar");
+
+
+    public void limparJaula(Jaula jaula, ContaBancaria contaBancaria){
+        System.out.println("Tratador está limpando a jaula "+ jaula);
+        horasTrabalhadas += 2.5;
+        contaBancaria.depositar(130);
+
     }
-    public void limparJaula(Jaula jaula){
-        System.out.println("Tratador começou a limpar a" + jaula);
-    }
-    public void alimentarAnimais(){
+
+    public void alimentarAnimais(ContaBancaria contaBancaria){
         System.out.println("Tratador está alimentando os animais.");
+        horasTrabalhadas += 3;
+        contaBancaria.depositar(125);
+    }
+
+    public void escovarAnimal(Animal animal,ContaBancaria contaBancaria){
+        System.out.println("Tratador está escovando "+ animal);
+        horasTrabalhadas += 1;
+        contaBancaria.depositar(100);
+    }
+    public void cuidarDoAnimal (Animal animal, ContaBancaria contaBancaria){
+        System.out.println("Tratador está aplicando medicamento no "+ animal);
+        horasTrabalhadas += 1;
+        contaBancaria.depositar(100);
+
     }
 }
