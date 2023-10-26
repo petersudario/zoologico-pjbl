@@ -1,21 +1,16 @@
-public class Visitante extends Pessoa{
-
+public class Visitante extends Pessoa {
 
     public Visitante(String nome, int idade, double saldoInicial) {
         super(nome, idade, saldoInicial);
     }
 
     @Override
-    void trabalhar() {
+    public String toString() {
+        return "Nome: " + nome + " | Idade: " + idade + " | Saldo Inicial: " + saldoInicial;
+    }
 
-    }
-    void tirarFoto(){
-        System.out.printf("Visitante $s esta tirando foto dos animais !",nome);
-    }
-    void darComida(){
-        System.out.printf("O visitante %s esta dando petiscos para os animais !",nome);
-    }
-    void seAlimentar(){
-        System.out.printf("O visitante %s tirou uma pausa pra se alimentar", nome);
+    @Override
+    void trabalhar() {
+        // Implement the behavior for working, if needed
     }
 }
