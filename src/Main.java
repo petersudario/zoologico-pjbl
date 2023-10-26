@@ -12,6 +12,13 @@ public class Main {
         Pedro.trabalhar();
 
         Pedro.conta.dados();
+        Tratador tratador = new Tratador("julio",31,2000.0);
+        tratador.darBanho();
+        System.out.println( "  ");
+        tratador.alimentarAnimais();
+        System.out.println( "  ");
+        tratador.observar();
+
 
     }
 }

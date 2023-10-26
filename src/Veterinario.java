@@ -5,17 +5,17 @@ public class Veterinario extends Funcionario {
 
       @Override
       protected void trabalhar(){
-            System.out.printf("Veterinário %s está cuidando dos animais", nome);
+            System.out.printf("Veterinario %s está cuidando dos animais", nome);
       }
 
       protected void vacinar(Animal animal){
-            System.out.printf("Veterinario %s está vacinando animal %s", nome, animal.nome );
+            System.out.printf("Veterinario %s esta vacinando animal %s", nome, animal.nome );
       }
 
       protected void examinar(Animal animal){
-            System.out.printf("Veterinário %s está diagnosticando e examinando o animal %s", nome, animal.nome);
+            System.out.printf("Veterinario %s esta diagnosticando e examinando o animal %s", nome, animal.nome);
       }
       protected void tratarFeridas(Animal animal){
-            System.out.printf("Veterinario %s está tratando feridas no animal %s",nome, animal.nome);
+            System.out.printf("Veterinario %s esta tratando feridas no animal %s",nome, animal.nome);
       }
 }

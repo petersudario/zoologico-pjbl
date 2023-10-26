@@ -10,10 +10,10 @@ public class Visitante extends Pessoa{
 
     }
     void tirarFoto(){
-        System.out.printf("Visitante $s está tirando foto dos animais !",nome);
+        System.out.printf("Visitante $s esta tirando foto dos animais !",nome);
     }
     void darComida(){
-        System.out.printf("O visitante %s está dando petiscos para os animais !",nome);
+        System.out.printf("O visitante %s esta dando petiscos para os animais !",nome);
     }
     void seAlimentar(){
         System.out.printf("O visitante %s tirou uma pausa pra se alimentar", nome);
