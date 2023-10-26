@@ -1,5 +1,4 @@
 public class Tratador extends Funcionario {
-    private String responsabilidades;
 
     public Tratador(String nome, int idade, double saldoInicial) {
         super(nome, idade, saldoInicial);
