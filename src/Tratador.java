@@ -16,4 +16,7 @@ public class Tratador extends Funcionario {
     public void alimentarAnimais(){
         System.out.println("Tratador está alimentando os animais.");
     }
+    public void observar(){
+        System.out.printf(" O tratador %s está observando possiveis fecundações que podem ocorrer",nome);
+    }
 }

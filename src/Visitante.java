@@ -1,11 +1,21 @@
 public class Visitante extends Pessoa{
 
-    protected float dinheiro;
 
-    public Visitante(String nome, int idade, float dinheiro){
-        super(nome, idade);
-
-        this.dinheiro = dinheiro;
+    public Visitante(String nome, int idade, double saldoInicial) {
+        super(nome, idade, saldoInicial);
     }
 
+    @Override
+    void trabalhar() {
+
+    }
+    void tirarFoto(){
+        System.out.printf("Visitante $s está tirando foto dos animais !",nome);
+    }
+    void darComida(){
+        System.out.printf("O visitante %s está dando petiscos para os animais !",nome);
+    }
+    void seAlimentar(){
+        System.out.printf("O visitante %s tirou uma pausa pra se alimentar", nome);
+    }
 }
