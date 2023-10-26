@@ -1,24 +1,37 @@
 public class Tratador extends Funcionario {
 
-    public Tratador(String nome, int idade, double saldoInicial) {
+    protected double horasTrabalhadas=0;
+
+    public Tratador(String nome, int idade, double saldoInicial, double horasTrabalhadas) {
         super(nome, idade, saldoInicial);
+        this.horasTrabalhadas = horasTrabalhadas;
+
     }
 
 
-    @Override
-    public void trabalhar() {
-        System.out.println("Tratador começou a trabalhar");
+
+    public void limparJaula(Jaula jaula, ContaBancaria contaBancaria){
+        System.out.println("Tratador está limpando a jaula "+ jaula);
+        horasTrabalhadas += 2.5;
+        contaBancaria.depositar(130);
+
     }
-    public void limparJaula(Jaula jaula){
-        System.out.println("Tratador começou a limpar a" + jaula);
+
+    public void alimentarAnimais(ContaBancaria contaBancaria){
+        System.out.println("Tratador está alimentando os animais.");
+        horasTrabalhadas += 3;
+        contaBancaria.depositar(125);
     }
-    public void alimentarAnimais(){
-        System.out.printf("Tratador %s esta alimentando os animais.",nome);
+
+    public void escovarAnimal(Animal animal,ContaBancaria contaBancaria){
+        System.out.println("Tratador está escovando "+ animal);
+        horasTrabalhadas += 1;
+        contaBancaria.depositar(100);
     }
-    public void observar(){
-        System.out.printf(" O tratador %s esta observando possiveis fecundaçoes que podem ocorrer",nome);
-    }
-    public void darBanho(){
-        System.out.printf(" O tratador %s esta dando banho nos animais",nome);
+    public void cuidarDoAnimal (Animal animal, ContaBancaria contaBancaria){
+        System.out.println("Tratador está aplicando medicamento no "+ animal);
+        horasTrabalhadas += 1;
+        contaBancaria.depositar(100);
+
     }
 }
