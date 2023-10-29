@@ -16,6 +16,10 @@ public abstract class Pessoa {
         this.conta = new ContaBancaria(nome, saldoInicial);
     }
 
+    public Pessoa() {
+
+    }
+
 
     abstract void trabalhar();
 
@@ -27,4 +31,15 @@ public abstract class Pessoa {
         System.out.printf("%s começou a dormir", this.nome);
     }
 
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setIdade(int idade) {
+        this.idade = idade;
+    }
+
+    public void setSaldoInicial(double saldoInicial) {
+        this.saldoInicial = saldoInicial;
+    }
 }
