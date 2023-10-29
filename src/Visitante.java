@@ -1,9 +1,12 @@
-public class Visitante extends Pessoa {
+import java.io.Serializable;
+
+public class Visitante extends Pessoa implements Serializable {
 
     public Visitante(String nome, int idade, double saldoInicial) {
         super(nome, idade, saldoInicial);
     }
-
+    public Visitante(){
+    }
     @Override
     public String toString() {
         return "Nome: " + nome + " | Idade: " + idade + " | Saldo Inicial: " + saldoInicial;
