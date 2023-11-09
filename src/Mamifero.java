@@ -8,15 +8,17 @@ public class Mamifero extends Animal{
         super(nome, idade, especie);
         this.tipoPelo = tipoPelo;
         this.qtdPatas= qtdPatas;
-    }
-        
-try {
+
+        try {
             if(idade > 120){
                 throw new Exception("Idade anormal");
             }
         }catch (Exception e){
             System.out.println(e.getMessage());
         }
+    }
+        
+
     public void amamentar(){
         System.out.println("Amamentando...");
         
