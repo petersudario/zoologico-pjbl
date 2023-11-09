@@ -24,5 +24,6 @@ public class Main {
             System.out.println(jaula1.animais.get(i));
         }
 
+        Mamifero mamiferoLoboSolo = new Mamifero("Laura",18,"Lobo Guara","liso",4);
     }
 }
