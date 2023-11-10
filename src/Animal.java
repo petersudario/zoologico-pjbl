@@ -13,13 +13,18 @@ public abstract class Animal implements Acoes{
         System.out.println("Animal fez barulho");
     }
     public void comer(String alimento){
-        System.out.printf("Animal comeu %s", alimento);
+        System.out.printf("Animal comeu %s \n", alimento);
     }
+
     public void andar(){
         System.out.println("Animal andou");
     }
     public void dormir(){
         System.out.println("Animal dormiu");
     }
+
+
+
+
 }
 

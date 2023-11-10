@@ -6,4 +6,7 @@ public class Peixes extends Animal{
     public void soltarBolhas(){
         System.out.println("Blu...Blu...Blu");
     }
+    public void comer(String p){
+        System.out.printf("Peixe comeu %s", p);
+    }
 }

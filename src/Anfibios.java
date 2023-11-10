@@ -11,8 +11,8 @@ public class Anfibios extends Animal{
     }
 
     @Override
-    public void comer(String alimento) {
-        System.out.println( "anfibio comendo nhami nhami" + alimento);
+    public void comer(String a) {
+        System.out.println( "anfibio comendo " + a);
 
     }
 

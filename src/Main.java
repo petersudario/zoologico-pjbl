@@ -26,6 +26,10 @@ public class Main {
             System.out.println(jaula1.animais.get(i));
         }
 
-        Mamifero mamiferoLoboSolo = new Mamifero("Laura",18,"Lobo Guara","liso",4);
+        Mamifero m = new Macaco("Cezar",10,"Gorila","liso",2);
+        m.comer("Banana");
+        m = new Ornitorrinco("Zé",4,"Australiano","liso",4);
+        m.comer("camarao");
+
     }
 }
