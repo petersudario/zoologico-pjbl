@@ -22,7 +22,6 @@ public class VisitanteForm extends JFrame implements Serializable {
 
     private JList<String> jaulaDisplayList; // Declare at class level
 
-
     public VisitanteForm() {
         nomeField = new JTextField(20);
         idadeField = new JTextField(20);
@@ -61,8 +60,6 @@ public class VisitanteForm extends JFrame implements Serializable {
         gbcJaula.gridy = 2;
         gbcJaula.gridwidth = 2;
         jaulaPanel.add(addJaulaButton, gbcJaula);
-
-
 
         // Load data from the ".p" file automatically when the application starts
         loadVisitanteData();
@@ -107,8 +104,6 @@ public class VisitanteForm extends JFrame implements Serializable {
             }
         });
 
-
-
         JPanel visitantesPanel = new JPanel(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(5, 5, 5, 5);
@@ -140,7 +135,6 @@ public class VisitanteForm extends JFrame implements Serializable {
         JPanel jaulaListPanel = createJaulaListPanel();
         this.add(jaulaListPanel, BorderLayout.SOUTH);
 
-
         JPanel logPanel = new JPanel(new BorderLayout());
         logPanel.add(loadButton, BorderLayout.NORTH);
         logPanel.add(new JScrollPane(visitanteList), BorderLayout.CENTER);
@@ -148,7 +142,6 @@ public class VisitanteForm extends JFrame implements Serializable {
         this.add(visitantesPanel, BorderLayout.WEST);
         this.add(logPanel, BorderLayout.CENTER);
         this.add(jaulaPanel, BorderLayout.EAST);
-
 
         this.pack();
         this.setVisible(true);
@@ -175,17 +168,18 @@ public class VisitanteForm extends JFrame implements Serializable {
         try (CSVWriter writer = new CSVWriter(new FileWriter("jaula.csv", true))) {
             if (new File("jaula.csv").length() == 0) {
                 // Write header only if the file is empty
-                String[] header = {"Nome", "Espaco"};
+                String[] header = { "Nome", "Espaco" };
                 writer.writeNext(header);
             }
 
             // Write Jaula attributes
-            String[] data = {jaula.getNome(), String.valueOf(jaula.getEspaco())};
+            String[] data = { jaula.getNome(), String.valueOf(jaula.getEspaco()) };
             writer.writeNext(data);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
+
     private JPanel createJaulaListPanel() {
         JPanel panel = new JPanel(new BorderLayout());
         jaulaDisplayList = new JList<>(new DefaultListModel<>());
