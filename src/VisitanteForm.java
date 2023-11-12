@@ -5,6 +5,8 @@ import java.awt.event.ActionListener;
 import java.io.*;
 import java.util.ArrayList;
 import com.opencsv.CSVWriter;
+import com.opencsv.CSVReader;
+import com.opencsv.exceptions.CsvValidationException;
 
 public class VisitanteForm extends JFrame implements Serializable {
 
@@ -18,7 +20,8 @@ public class VisitanteForm extends JFrame implements Serializable {
     private JList<String> jaulaList;
     private ArrayList<Jaula> listaDeJaulas;
 
-    
+    private JList<String> jaulaDisplayList; // Declare at class level
+
 
     public VisitanteForm() {
         nomeField = new JTextField(20);
@@ -87,6 +90,15 @@ public class VisitanteForm extends JFrame implements Serializable {
             }
         });
 
+        JButton loadJaulasButton = new JButton("Load Jaulas");
+        loadJaulasButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Your logic to load Jaulas
+                loadJaulas();
+            }
+        });
+
         loadButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -121,6 +133,13 @@ public class VisitanteForm extends JFrame implements Serializable {
         gbcJaula.gridy = 2;
         gbcJaula.gridwidth = 2;
         jaulaPanel.add(addJaulaButton, gbcJaula);
+
+        gbcJaula.gridy = 3;
+        jaulaPanel.add(loadJaulasButton, gbcJaula);
+
+        JPanel jaulaListPanel = createJaulaListPanel();
+        this.add(jaulaListPanel, BorderLayout.SOUTH);
+
 
         JPanel logPanel = new JPanel(new BorderLayout());
         logPanel.add(loadButton, BorderLayout.NORTH);
@@ -164,6 +183,51 @@ public class VisitanteForm extends JFrame implements Serializable {
             String[] data = {jaula.getNome(), String.valueOf(jaula.getEspaco())};
             writer.writeNext(data);
         } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    private JPanel createJaulaListPanel() {
+        JPanel panel = new JPanel(new BorderLayout());
+        jaulaDisplayList = new JList<>(new DefaultListModel<>());
+
+        JScrollPane scrollPane = new JScrollPane(jaulaDisplayList);
+        panel.add(new JLabel("Jaula List:"), BorderLayout.NORTH);
+        panel.add(scrollPane, BorderLayout.CENTER);
+
+        return panel;
+    }
+
+    private void loadJaulas() {
+        DefaultListModel<String> jaulaListModel = new DefaultListModel<>();
+
+        try (CSVReader reader = new CSVReader(new FileReader("jaula.csv"))) {
+            String[] nextLine;
+            boolean isFirstLine = true;
+
+            while ((nextLine = reader.readNext()) != null) {
+                if (isFirstLine) {
+                    isFirstLine = false;
+                    continue; // Skip header
+                }
+
+                String nome = nextLine[0];
+                Double espaco = Double.parseDouble(nextLine[1]);
+
+                // Create Jaula instance and add to the list
+                Jaula jaula = new Jaula(nome, espaco);
+                listaDeJaulas.add(jaula);
+
+                // Add Jaula data to the list model for display
+                jaulaListModel.addElement(jaula.getNome() + " - Espaço: " + jaula.getEspaco());
+            }
+
+            // Display loaded Jaulas in the JList
+            jaulaList.setModel(jaulaListModel);
+            jaulaDisplayList.setModel(jaulaListModel); // Set the JList in the panel
+            JOptionPane.showMessageDialog(null, "Jaulas loaded");
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (CsvValidationException e) {
             throw new RuntimeException(e);
         }
     }
