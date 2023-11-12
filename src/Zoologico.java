@@ -15,19 +15,19 @@ public class Zoologico {
         HabitMamifero = new ArrayList<>();
     }
 
-    public void adicionarHabitat(Animal animal){
+    public void adicionarHabitat(Animal animal) {
         HabitMamifero.add((Mamifero) animal);
     }
 
-    public int size(){
+    public int size() {
         return HabitMamifero.size();
     }
 
-
-    public void abrir(){
+    public void abrir() {
         System.out.println("Zoológico aberto");
     }
-    public void fechar(){
+
+    public void fechar() {
         System.out.println("Zoológico fechou");
     }
 }

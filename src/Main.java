@@ -13,13 +13,11 @@ public class Main {
         jaula1.adicionarAnimal(macaco);
         jaula1.adicionarAnimal(macaco2);
 
-        Mamifero mamifero = new Mamifero("afonso",140,"marssupial","liso",2);
 
 
         for(int i = 0; i < jaula1.size(); i++){
             System.out.println(jaula1.animais.get(i));
         }
 
-        Mamifero mamiferoLoboSolo = new Mamifero("Laura",18,"Lobo Guara","liso",4);
     }
 }
