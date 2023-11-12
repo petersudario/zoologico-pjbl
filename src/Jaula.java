@@ -19,4 +19,12 @@ public class Jaula {
         return animais.size();
     }
 
+    public String getNome() {
+        return nome;
+    }
+
+    public Double getEspaco() {
+        return espaco;
+    }
+
 }
