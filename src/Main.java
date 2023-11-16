@@ -8,6 +8,11 @@ public class Main {
         Animal macaco2 = new Macaco("Luiz Inacio Lula da Silva", 3, "Macaco Prego", "Preto", 4);
         Mamifero mamifero = new Mamifero("afonso",140,"marssupial","liso",2);
         Mamifero mamiferoLoboSolo = new Mamifero("Laura",18,"Lobo Guara","liso",4);
+        Mamifero m = new Macaco("Cezar",10,"Gorila","liso",2);
+        Mamifero ornitorrinco = new Ornitorrinco("Zé",4,"Australiano","liso",4);
+
+        ornitorrinco.comer("Banana");
+        ornitorrinco.comer("camarao");
 
         Jaula jaula1 = new Jaula("Jaula 1", 500.00);
 
